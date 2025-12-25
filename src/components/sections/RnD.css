@@ -1,0 +1,82 @@
+/* R&D Section Styles */
+.rnd__subtitle {
+    color: var(--color-green);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rnd__grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.rnd__category {
+    background: rgba(45, 55, 72, 0.4);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-base);
+}
+
+.rnd__category:hover {
+    border-color: var(--color-green);
+    transform: translateY(-5px);
+}
+
+.rnd__category-title {
+    color: var(--color-green);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rnd__items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rnd__item-title {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.rnd__item-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1.2em;
+    background: var(--color-green);
+    margin-right: 0.75rem;
+    border-radius: 2px;
+}
+
+.rnd__item-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+@media (max-width: 1200px) {
+    .rnd__grid-detailed {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .rnd__grid-detailed {
+        grid-template-columns: 1fr;
+    }
+}

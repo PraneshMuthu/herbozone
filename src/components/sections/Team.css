@@ -1,0 +1,203 @@
+/* Team Section Styles */
+.team {
+    background: var(--bg-light);
+}
+
+.team__carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.team__carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0.5rem 2rem;
+    /* Bottom padding for shadow */
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.team__carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.team__nav-btn {
+    background: var(--bg-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    z-index: 2;
+    color: var(--primary-green);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.team__nav-btn:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: scale(1.1);
+}
+
+.team__card {
+    min-width: 280px;
+    width: 280px;
+    scroll-snap-align: center;
+    text-align: center;
+    background: var(--bg-white);
+    padding: 4rem 1.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+}
+
+.team__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--gradient-green);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition-normal);
+}
+
+.team__card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.team__card:hover::before {
+    transform: scaleX(1);
+}
+
+.team__image {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--bg-white);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.team__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team__card:hover .team__image img {
+    transform: scale(1.1);
+}
+
+.team__info {
+    position: relative;
+    z-index: 1;
+}
+
+.team__name {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.team__role {
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 1rem;
+}
+
+.team__more {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--transition-normal);
+    display: inline-block;
+}
+
+.team__card:hover .team__more {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Styles specific to Team */
+.team__modal-content {
+    padding: 1rem;
+}
+
+.team__modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 1rem;
+}
+
+.team__modal-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid var(--bg-white);
+    box-shadow: var(--shadow-md);
+}
+
+.team__modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team__modal-role {
+    color: var(--primary-green);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.team__modal-bio {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.team__modal-bio p {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .team__nav-btn {
+        display: none;
+    }
+}
